@@ -6,181 +6,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- FrameWork Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                container:{
-                    center: true,
-                    padding: '16px',
-                },
-                extend: {
-              colors: {
-                  utama: '#F59E0B', gelap: '#111827',abu: '#9CA3AF'
-              },
-              screens:{
-                '2xl':  '1320px',
-              },
-              
-            }
-          }
-        }
-      </script>
-      <style type="text/tailwindcss">
-        @layer utilities {
-            html{
-                scroll-behavior: smooth;
-            }
-            .navbar-fixed{
-                position: fixed;
-                z-index: 9999;
-                opacity: 100%;
-                backdrop-filter: blur(7px);
-                box-shadow: inset 0 -1px 0 0 rgb(0, 0, 0,0.2);
-            }
-            .content-auto {
-                content-visibility: auto;
-            }
-            #particles-js{
-                background-color: black;
-                
-            }
-            .top-410{
-                top: 410px;
-            }
-            body{
-                font-family: 'Poppins';
-            }
-            .wid{
-                width: 9vw;
-            }
-            .widt{
-                width: 5vw;
-            }
-            .burger-active > span:nth-child(1){
-                position: absolute;
-                top: 0%;
-                left: 50%;
-                width: 30px;
-                height: 2px;
-                background-color: #F59E0B;
-                transform: translate(-50%, -50%) rotate(45deg);
-            }
-            .burger-active > span:nth-child(3){
-                position: absolute;
-                bottom: 0%;
-                left: 50%;
-                width: 30px;
-                height: 2px;
-                background-color: #F59E0B;
-                transform: translate(-50%, -50%) rotate(-45deg);
-            }
-            .burger-active > span:nth-child(2){
-                scale: 0;
-            }
-            
-            .home-active{
-                color: #F59E0B;
-            }
-            .about-active{
-                color: #F59E0B;
-            }
-            .portofolio-active{
-                color: #F59E0B;
-            }
-            .ecxperience-active{
-                color: #F59E0B;
-            }
-            .skills-active{
-                color: #F59E0B;
-            }
-            .contact-active{
-                color: #F59E0B;
-            }
-
-            .h-60{
-                height: 60px;
-            }
-            .h-90{
-                height: 90px;
-            }
-            .mr{
-                margin-right: 1vw;
-            }
-            .cursor{
-                cursor: pointer;
-            }
-            .shapes-section {
-            position: relative;
-            overflow: hidden;
-            }
-
-            .shapes-box {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            pointer-events: none;
-            }
-
-            .shapes-box span {
-            position: absolute;
-            }
-
-            .shapes-box span:nth-child(1) {
-            left: 4.8%;
-            top: 4.5%;
-            }
-            .shapes-box span:nth-child(2) {
-            left: 9.6%;
-            top: 27.2%;
-            }
-            .shapes-box span:nth-child(3) {
-            left: 8.8%;
-            bottom: 16%;
-            }
-            .shapes-box span:nth-child(4) {
-            left: 25%;
-            bottom: 21%;
-            }
-            .shapes-box span:nth-child(5) {
-            left: 35%;
-            top: 6.6%;
-            }
-            .shapes-box span:nth-child(6) {
-            left: 43%;
-            bottom: 30%;
-            }
-            .shapes-box span:nth-child(7) {
-            left: 49%;
-            top: 50%;
-            }
-            .shapes-box span:nth-child(8) {
-            right: 11.8%;
-            top: 33%;
-            }
-            .shapes-box span:nth-child(9) {
-            right: 6%;
-            top: 10%;
-            }
-            .shapes-box span:nth-child(10) {
-            right: 4.5%;
-            bottom: 33%;
-            }
-
-            
-        }
-        </style>
-    <!-- FrameWork Tailwind -->
+    <link rel="stylesheet" href="/Dist/css/style.css">
     <title>Dedi Rialdi | Portpolio</title>
     <link rel="icon" type="image/png" href="/Dist/Foto/Untitled-1.png">
 </head>
 <body>
     <!-- Header Start -->
-    <header class="bg-transparent absolute  w-full flex items-center z-10 h-60 lg:h-90">
+    <header class="bg-transparent absolute  w-full flex items-center z-10 h-24 lg:h-24">
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
@@ -228,19 +60,18 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-utama md:text-xl ">Konichiwa Minasan.. 🖐, Saya <span class="block font-bold text-gelap text-4xl lg:text-5xl">Dedi Rialdi as Aldi</span></h1>
-                    <h2 class="font-medium text-gray-600 text-lg mb-5 lg:text-2xl">Front-end Develover & <span class="text-gelap">Designer</span></h2>
-                    <p class="font-medium text-abu mb-10 leading-relaxed">Aku bisa membuat apa saja dalam Desain, Ayo beri saya tantangan! </p>
-
+                    <h1 class="text-base font-semibold text-utama md:text-xl">Konichiwa Minasan.. 🖐, Saya <span class="block font-bold text-gelap text-4xl lg:text-5xl">Dedi Rialdi as Aldi</span></h1>
+                    <h2 class="font-medium text-gray-600 text-lg mb-5 lg:text-2xl">Front-end Developer & <span class="text-gelap">Designer</span></h2>
+                    <p class="font-medium text-abu mb-10 leading-relaxed">Aku bisa membuat apa saja dalam Desain, Ayo beri saya tantangan!</p>
                     <a href="https://wa.me/088971267465" class="text-base font-semibold text-white bg-utama py-3 px-8 rounded-full hover:shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out">Hubungi Saya</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
-                    <div class="relative mt-10 lg: mt-0 lg:right-0">
-                        <img src="/Dist/Foto/IMG_20240720_222657.png" alt="aldi" class="max-w-ful mx-auto" width="400px" height="400px" >
+                    <div class="relative mt-10 lg:mt-0 lg:right-0">
+                        <img src="/Dist/Foto/IMG_20240720_222657.png" alt="aldi" class="max-w-full mx-auto" width="400px" height="400px">
                         <span class="absolute -bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#F59E0B" d="M65.1,-20.2C72.7,2.4,59.3,32.7,41.5,42.1C23.8,51.4,1.7,39.8,-21.6,24.2C-44.9,8.6,-69.4,-11,-66,-27.7C-62.6,-44.5,-31.3,-58.6,-1.3,-58.1C28.7,-57.7,57.4,-42.9,65.1,-20.2Z" transform="translate(100 100)"  />
-                              </svg>
+                                <path fill="#F59E0B" d="M65.1,-20.2C72.7,2.4,59.3,32.7,41.5,42.1C23.8,51.4,1.7,39.8,-21.6,24.2C-44.9,8.6,-69.4,-11,-66,-27.7C-62.6,-44.5,-31.3,-58.6,-1.3,-58.1C28.7,-57.7,57.4,-42.9,65.1,-20.2Z" transform="translate(100 100)"/>
+                            </svg>
                         </span>
                     </div>
                 </div>
@@ -251,33 +82,34 @@
 				<img src="/Dist/Foto/Shapes-content/fl-shape-1.png" title="" alt="">
 			</span>
 			<span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
-				<img src="/Dist/Foto/Shapes-content/fl-shape-10.png" title="" alt="">
-			</span>
-			<span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-2.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": -20, "y": 180}'>
+			<span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-3.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": 300, "y": 70}'>
+			<span data-parallax='{"x": -20, "y": 180}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-4.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+			<span data-parallax='{"x": 300, "y": 70}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-5.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+			<span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-6.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": 60, "y": -100}'>
+			<span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-7.png" title="" alt="">
 			</span>
-			<span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+			<span data-parallax='{"x": 60, "y": -100}'>
 				<img src="/Dist/Foto/Shapes-content/fl-shape-9.png" title="" alt="">
 			</span>
+			<span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+				<img src="/Dist/Foto/Shapes-content/fl-shape-10.png" title="" alt="">
+			</span>
 		</div>
+	  </section>
     </section>
     <!-- Hero Section Finish -->
-
+    
     <!-- About Section Start -->
     <div id="particles-js">
     <section id="about" class="pt-36 pb-32">
@@ -665,9 +497,17 @@
         </div>
     </footer>
     <!-- footer finish -->
+
+    <!-- jQuery -->
+    <script src="Dist/js/jquery-3.2.1.min.js"></script>
+    <script src="Dist/js/jquery.parallax-scroll.js"></script>
     <script src="/Dist/particles.js-master/particles.min.js"></script>
     <script src="/Dist/particles.js-master/app.js"></script>
     <script src="/Dist/js/script.js"></script>
-    <script src="/jquery.parallax-scroll.js"></script>
+    <!-- FrameWork Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
 </body>
 </html>
