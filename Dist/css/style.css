@@ -4,7 +4,7 @@ body {
   font-family: "Poppins";
 }
 .navbar-fixed {
-  position: fixed;
+  position: fixed !important;
   z-index: 1;
   opacity: 100%;
   backdrop-filter: blur(7px);
@@ -47,24 +47,7 @@ body {
   scale: 0;
 }
 
-.home-active {
-  color: #f59e0b;
-}
-.about-active {
-  color: #f59e0b;
-}
-.portofolio-active {
-  color: #f59e0b;
-}
-.ecxperience-active {
-  color: #f59e0b;
-}
-.skills-active {
-  color: #f59e0b;
-}
-.contact-active {
-  color: #f59e0b;
-}
+
 
 .h-60 {
   height: 60px;
@@ -98,6 +81,7 @@ body {
 
 .shapes-box span {
   position: absolute;
+  z-index: -10;
 }
 
 .shapes-box span:nth-child(1) {
@@ -139,4 +123,19 @@ body {
 .shapes-box span:nth-child(10) {
   right: 4.5%;
   bottom: 33%;
+}
+
+/* preloader */
+#preloader{
+  background: #ffffff url(/Dist/Foto/Loader/loader_gif.gif) no-repeat center center;
+  background-size: 25%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+}
+@media screen and (max-width: 700px) {
+  #preloader{
+    background-size: 55%;
+  }
 }
