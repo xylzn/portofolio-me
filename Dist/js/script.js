@@ -49,6 +49,8 @@ window.addEventListener("load", function(){
     loader.style.display= "none";
 })
 
+
+
 // skeleton
 const allskeleton = document.querySelectorAll('.skeleton')
 window.addEventListener('load', function(){
