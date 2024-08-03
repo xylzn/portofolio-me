@@ -48,3 +48,11 @@ var loader = document.getElementById("preloader");
 window.addEventListener("load", function(){
     loader.style.display= "none";
 })
+
+// skeleton
+const allskeleton = document.querySelectorAll('.skeleton')
+window.addEventListener('load', function(){
+    allskeleton.forEach(item=>{
+        item.classList.remove('skeleton') 
+    })
+})
