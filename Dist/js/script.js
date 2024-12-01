@@ -44,14 +44,18 @@ contactForm.addEventListener("submit", function(e)
 
 });
 
-preloader
+// Preloader
 var loader = document.getElementById("preloader");
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function() {
     console.log("Load Helua");
-    loader.style.display= "none";
-    console.log("Ilang siah");
-})
+    if (loader) { // Pastikan elemen loader ada
+        loader.style.display = "none";
+        console.log("Ilang siah");
+    } else {
+        console.log("Loader element not found");
+    }
+});
 
 
 

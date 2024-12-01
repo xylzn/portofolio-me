@@ -11,7 +11,9 @@ tailwind.config = {
     screens:{
       '2xl':  '1320px',
     },
-    
+    width:{
+      '96': '60%'
+    }
   }
 }
 }
