@@ -1,4 +1,9 @@
 import 'animate.css';
+
+
+
+
+// animate css
 // nvbar-fixed
 window.onscroll = function(){
     const header = document.querySelector('header');
@@ -47,15 +52,11 @@ contactForm.addEventListener("submit", function(e)
 var loader = document.getElementById("preloader");
 
 window.addEventListener("load", function(){
-    loader.style.display= "none";
+    console.log("Load Helua");
+    preloader.style.display= "none";
+    console.log("Ilang siah");
 })
 
 
 
 // skeleton
-const allskeleton = document.querySelectorAll('.skeleton')
-window.addEventListener('load', function(){
-    allskeleton.forEach(item=>{
-        item.classList.remove('skeleton') 
-    })
-})
