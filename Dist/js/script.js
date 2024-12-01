@@ -1,7 +1,3 @@
-import 'animate.css';
-
-
-
 
 // animate css
 // nvbar-fixed
@@ -48,12 +44,12 @@ contactForm.addEventListener("submit", function(e)
 
 });
 
-// preloader
+preloader
 var loader = document.getElementById("preloader");
 
 window.addEventListener("load", function(){
     console.log("Load Helua");
-    preloader.style.display= "none";
+    loader.style.display= "none";
     console.log("Ilang siah");
 })
 
