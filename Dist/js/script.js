@@ -1,3 +1,4 @@
+import 'animate.css';
 // nvbar-fixed
 window.onscroll = function(){
     const header = document.querySelector('header');
