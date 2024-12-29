@@ -45,16 +45,29 @@ contactForm.addEventListener("submit", function(e)
 });
 
 // Preloader
-var loader = document.getElementById("preloader");
+// var loader = document.getElementById("preloader");
 
-window.addEventListener("load", function() {
-    console.log("Load Helua");
-    if (loader) { // Pastikan elemen loader ada
-        loader.style.display = "none";
-        console.log("Ilang siah");
-    } else {
-        console.log("Loader element not found");
-    }
+// window.addEventListener("load", function() {
+//     console.log("Load Helua");
+//     if (loader) { // Pastikan elemen loader ada
+//         loader.style.display = "none";
+//         console.log("Ilang siah");
+//     } else {
+//         console.log("Loader element not found");
+//     }
+// });
+document.addEventListener("DOMContentLoaded", function() {
+    var load = document.getElementById("preloader");
+
+    window.addEventListener("load", function() {
+        console.log("Load Helua");
+        if (load) { // Pastikan elemen loader ada
+            load.style.display = "none";
+            console.log("Ilang siah");
+        } else {
+            console.log("Loader element not found");
+        }
+    });
 });
 
 
