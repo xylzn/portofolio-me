@@ -125,6 +125,8 @@ body {
   bottom: 33%;
 }
 
+
+
 /* preloader */
 #preloader{
   background: #ffffff url(/Dist/Foto/Loader/well.gif) no-repeat center center;
@@ -139,5 +141,6 @@ body {
     background-size: 55%;
   }
 }
+
 
   
