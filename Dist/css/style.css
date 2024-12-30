@@ -188,7 +188,7 @@ body {
     }
 
     .modal-content {
-      border-radius: 10%;
+      border-radius: 10px;
         background-color: #fefefe;
         margin: 15% auto;
         padding: 20px;
