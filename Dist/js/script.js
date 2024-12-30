@@ -44,18 +44,7 @@ contactForm.addEventListener("submit", function(e)
 
 });
 
-// Preloader
-// var loader = document.getElementById("preloader");
-
-// window.addEventListener("load", function() {
-//     console.log("Load Helua");
-//     if (loader) { // Pastikan elemen loader ada
-//         loader.style.display = "none";
-//         console.log("Ilang siah");
-//     } else {
-//         console.log("Loader element not found");
-//     }
-// });
+// PreLoader
 document.addEventListener("DOMContentLoaded", function() {
     var load = document.getElementById("preloader");
 
@@ -72,4 +61,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// skeleton
+
+// Comment
+
+    let currentCommentId = null;
+
+    function openCommentModal(id) {
+        currentCommentId = id; // Simpan ID karya saat ini
+        document.getElementById('commentModal').classList.remove('hidden');
+    }
+
+    function closeCommentModal() {
+        document.getElementById('commentModal').classList.add('hidden');
+        document.getElementById('commentInput').value = ''; // Kosongkan input
+    }
+
+    document.getElementById('submitComment').onclick = function() {
+        const commentText = document.getElementById('commentInput').value.trim();
+        const commentsDiv = document.getElementById(`comments${currentCommentId}`);
+
+        if (commentText) {
+            // Membuat elemen komentar baru
+            const newComment = document.createElement('div');
+            newComment.className = 'bg-gray-200 p-2 rounded mt-1';
+            newComment.textContent = commentText;
+
+            // Menambahkan komentar ke div komentar
+            commentsDiv.appendChild(newComment);
+
+            // Menutup modal
+            closeCommentModal();
+        } else {
+            alert('Komentar tidak boleh kosong!');
+        }
+    };
+
+
