@@ -124,6 +124,26 @@ body {
   right: 4.5%;
   bottom: 33%;
 }
+#Logo {
+    display: none;
+    display: block;
+}
+#Apparel {
+    display: block;
+    display: none;
+}
+#Poster {
+    display: block;
+    display: none;
+}
+#Packaging {
+    display: block;
+    display: none;
+}
+#Vector {
+    display: block;
+    display: none;
+}
 
 
 
