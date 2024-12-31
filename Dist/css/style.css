@@ -170,7 +170,7 @@ body {
   background-color: #f59e0b;
   color: #ffffff;
 }
-/* Command */
+/* Command popup*/
 
     .modal {
         display: flex;
@@ -193,7 +193,7 @@ body {
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 60%;
         max-width: 500px;
     }
 
@@ -211,4 +211,6 @@ body {
         cursor: pointer;
     }
 
-  
+.tbl{
+  width: auto;
+}  

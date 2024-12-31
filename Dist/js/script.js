@@ -96,4 +96,81 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
+    // ... like button ...
+function toggleLove(button, itemId) {
+    const heartIcon = button.querySelector('i');
+    const countDisplay = button.querySelector('.love-count');
+    let count = parseInt(countDisplay.textContent) || 0;
+
+    // Ambil hitungan dari Local Storage
+    const storedCount = localStorage.getItem(itemId);
+    if (storedCount) {
+        count = parseInt(storedCount);
+    }
+
+    const isLoved = heartIcon.classList.contains('fa-solid');
+
+    if (isLoved) {
+        heartIcon.classList.remove('fa-solid');
+        heartIcon.classList.add('fa-regular');
+        count--; // Kurangi hitungan
+    } else {
+        heartIcon.classList.remove('fa-regular');
+        heartIcon.classList.add('fa-solid');
+        count++; // Tambah hitungan
+    }
+
+    countDisplay.textContent = count; // Perbarui tampilan hitungan
+    localStorage.setItem(itemId, count); // Simpan hitungan ke Local Storage
+    localStorage.setItem(itemId + '-liked', !isLoved); // Simpan status like
+}
+
+// Memuat status saat halaman dimuat
+window.onload = function() {
+    const buttons = document.querySelectorAll('.love-button'); // Ganti dengan selector yang sesuai
+    buttons.forEach(button => {
+        const itemId = button.getAttribute('data-item-id'); // Ambil ID item
+        const storedCount = localStorage.getItem(itemId);
+        const likedStatus = localStorage.getItem(itemId + '-liked');
+
+        if (storedCount) {
+            button.querySelector('.love-count').textContent = storedCount; // Set hitungan
+        }
+
+        if (likedStatus === 'true') {
+            button.querySelector('i').classList.remove('fa-regular');
+            button.querySelector('i').classList.add('fa-solid'); // Set ikon menjadi solid
+        }
+    });
+};
+
+// Share Function
+// Fungsi untuk membuka modal
+document.getElementById('shareButton').onclick = function() {
+    document.getElementById('shareModal').classList.remove('hidden');
+}
+
+// Fungsi untuk menutup modal
+document.getElementById('closeModal').onclick = function() {
+    document.getElementById('shareModal').classList.add('hidden');
+}
+
+// Fungsi untuk berbagi ke WhatsApp
+function shareToWhatsApp(url) {
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(url)}`;
+    window.open(whatsappShareUrl, '_blank');
+}
+
+// Fungsi untuk berbagi ke Threads
+function shareToThreads(url) {
+    const threadsShareUrl = `https://www.threads.net/share?url=${encodeURIComponent(url)}`;
+    window.open(threadsShareUrl, '_blank');
+}
+
+// Fungsi untuk berbagi ke Instagram
+function shareToInstagram(url) {
+    alert("Untuk membagikan ke Instagram, salin dan tempel URL berikut: " + url);
+}
+
+
 
