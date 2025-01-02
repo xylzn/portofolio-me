@@ -186,20 +186,31 @@ body {
         justify-content: center;
         align-items: center;
     }
+    .modal-header {
+      display: flex; /* Menggunakan Flexbox */
+      justify-content: flex-end; /* Mengatur elemen ke sisi kanan */
+      align-items: center; /* Menyelaraskan elemen secara vertikal */
+  }
 
     .modal-content {
       border-radius: 10px;
         background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
+        margin: 50% auto;
+        padding: 10px;
         border: 1px solid #888;
         width: 80%;
         max-width: 500px;
     }
+    @media screen and (min-width: 680px){
+      .modal-content{
+        margin: 15% auto;
+        padding: 20px;
+      }
+    }
 
     .close {
         color: #aaa;
-        float: right;
+
         font-size: 28px;
         font-weight: bold;
         
