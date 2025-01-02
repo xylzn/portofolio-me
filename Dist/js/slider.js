@@ -1,5 +1,5 @@
 function sliderPage(pageId) {
-  const pages = ["Logo", "Apparel", "Poster", "Packaging", "Vector", "New"];
+  const pages = ["artworkGalleryLogo", "artworkGalleryApparel","artworkGalleryVector","artworkGalleryNew","artworkGalleryPackaging","artworkGalleryPoster" ];
 
   pages.forEach(page => {
     document.getElementById(page).style.display = page === pageId ? "block" : "none";
@@ -7,7 +7,7 @@ function sliderPage(pageId) {
 }
 
 // Event listeners untuk navigasi
-["Logo", "Apparel", "Poster", "Packaging", "Vector", "New"].forEach(page => {
+["artworkGalleryLogo", "artworkGalleryApparel","artworkGalleryVector","artworkGalleryNew","artworkGalleryPackaging","artworkGalleryPoster" ].forEach(page => {
   document.getElementById(page + "Btn").addEventListener("click", () => sliderPage(page));
 });
 
@@ -21,6 +21,6 @@ function setActiveButton(button) {
   button.classList.add('nyala');
 }
 window.onload = function () {
-  const defaultButton = document.getElementById('NewBtn');
+  const defaultButton = document.getElementById('artworkGalleryNewBtn');
   setActiveButton(defaultButton);
 };

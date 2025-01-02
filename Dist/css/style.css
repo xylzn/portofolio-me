@@ -124,27 +124,27 @@ body {
   right: 4.5%;
   bottom: 33%;
 }
-#New{
+#artworkGalleryNew{
   display: none;
   display: block;
 }
-#Logo {
+#artworkGalleryLogo{
     display: block;
     display: none;
 }
-#Apparel {
+#artworkGalleryApparel{
     display: block;
     display: none;
 }
-#Poster {
+#artworkGalleryPackaging {
     display: block;
     display: none;
 }
-#Packaging {
+#artworkGalleryPoster{
     display: block;
     display: none;
 }
-#Vector {
+#artworkGalleryVector{
     display: block;
     display: none;
 }
@@ -168,7 +168,7 @@ body {
 
 .nyala{
   background-color: #f59e0b;
-  color: #ffffff;
+  color: #ffffff !important ;
 }
 /* Command popup*/
 
@@ -193,7 +193,7 @@ body {
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 60%;
+        width: 80%;
         max-width: 500px;
     }
 
@@ -202,6 +202,7 @@ body {
         float: right;
         font-size: 28px;
         font-weight: bold;
+        
     }
 
     .close:hover,
@@ -214,3 +215,4 @@ body {
 .tbl{
   width: auto;
 }  
+

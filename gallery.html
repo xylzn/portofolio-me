@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/Dist/css/style.css">
+    <link rel="stylesheet" href="/Dist//css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Dedi Rialdi | Gallery</title>
@@ -18,7 +18,21 @@
 </head>
 
 <body>
+
     <div id="preloader" class="loader"></div>
+    <div id="shareModal" class="modal hidden">
+        <div class="modal-content text-gelap">
+            <span class="close" id="closeShareModal">&times;</span>
+            <div class="flex justify-between mt-2 py-4 items-center">
+                <h2 class="justify-start">Bagikan Karya Saya!!</h2>
+                <div class="justify-end mr-6 cursor-pointer">
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp text-l md:text-2xl mr-4" id="whatsappShare"></i></a>
+                    
+                    <i class="fa-brands fa-instagram text-l md:text-2xl mr-4" id="instagramShare"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Header Start -->
     <header class="bg-transparent absolute  w-full flex items-center z-10 h-24 lg:h-24">
         <div class="container">
@@ -42,27 +56,27 @@
                         class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-2 top-full lg:flex lg:static lg:bg-transparent max-w-full lg:shadow-none lg:rounded-none">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#home"
+                                <a href="#home"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama ">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#about"
+                                <a href="#about"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama">Tentang Saya</a>
                             </li>
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#portofolio"
+                                <a href="#portofolio"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama">Portofolio</a>
                             </li>
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#experience"
+                                <a href="#experience"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama">Experience</a>
                             </li>
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#skills"
+                                <a href="#skills"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama">Skills</a>
                             </li>
                             <li class="group">
-                                <a href="https://portofolio-me-vert.vercel.app/#contact"
+                                <a href="#contact"
                                     class="text-base py-2 text-dark mx-8 flex group-hover:text-utama">Contact</a>
                             </li>
                         </ul>
@@ -71,667 +85,86 @@
             </div>
         </div>
     </header>
-    <!-- Header Finish -->
+    <!-- Navbar Finish -->
 
-    <section class="w-full pt-10 bg-gelap text-white">
+
+    <section id="galleryContainer" class="w-full pt-10 bg-gray-800 text-white">
         <div class="container px-5 py-20 mx-auto antialiased">
-            <div class="flex flex-col text-center w-full ">
-                <h1 class="sm:text-3xl text-2xl font-semibold mb-4 text-utama">My Gallery</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                    Dalam setiap karya seni ini, saya berusaha untuk mengungkapkan perasaan dan pengalaman saya. tidak
-                    semuanya bagus tapi saya selalu berusaha yang terbaik, <a
-                        href="https://www.instagram.com/gewoonrevaa_" class="text-semibold bg-sky-400 rounded-lg"">What do you want to challenge me?,</a>
-  
+            <div class="flex flex-col text-center w-full">
+                <h1 class="sm:text-3xl text-2xl font-semibold mb-4 text-orange-500" data-aos="fade-up" data-aos-duration="500">My Gallery</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base" data-aos="fade-up" data-aos-duration="500">
+                    Dalam setiap karya seni ini, saya berusaha untuk mengungkapkan perasaan dan pengalaman saya.
                 </p>
             </div>
+            <section class=" w-full pt-3 ">
+                <div class=" container py-5 mx-auto antialiased">
 
+                    <div class="flex flex-wrap w-full gap-2 justify-center">
+                        <button
+                            class="w-auto  lg:w-1/4 lg:m-0 xl:w-1/5  h-10 border-2 rounded-full border-utama hover:bg-utama text-utama hover:text-white nyala"
+                            id="artworkGalleryNewBtn" onclick="setActiveButton(this)">
+                            <p class="text-center mx-7  ">Karya Terbaru</p>
+                        </button>
+                        <button
+                            class="w-auto lg:w-1/4 lg:m-0 xl:w-1/5  h-10 border-2 rounded-full border-utama hover:bg-utama text-utama hover:text-white  "
+                            id="artworkGalleryLogoBtn" onclick="setActiveButton(this)">
+                            <p class="text-center mx-7  ">Logo</p>
+                        </button>
+
+                        <button
+                            class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama text-utama hover:text-white  "
+                            id="artworkGalleryApparelBtn" onclick="setActiveButton(this)">
+                            <p class="text-center mx-7   ">Apparel</p>
+                        </button>
+                        <button
+                            class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama   text-utama hover:text-white "
+                            onclick="setActiveButton(this)" id="artworkGalleryPosterBtn">
+                            <p class="text-center mx-7  ">Poster</p>
+                        </button>
+                        <button
+                            class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama text-utama hover:text-white  "
+                            onclick="setActiveButton(this)" id="artworkGalleryPackagingBtn">
+                            <p class="text-center mx-7  ">Packaging</p>
+                        </button>
+                        <button
+                            class="w-auto  lg:w-1/5 lg:m-0 text-utama h-10 border-2 rounded-full border-utama hover:bg-utama hover:text-white  "
+                            onclick="setActiveButton(this)" id="artworkGalleryVectorBtn">
+                            <p class="text-center mx-7  ">Vector</p>
+                        </button>
+
+
+                    </div>
+                </div>
+
+            </section>
         </div>
-        
     </section>
-    <!-- Button Navigasi -->
-    <section class=" w-full pt-3 ">
-        <div class=" container py-5 mx-auto antialiased">
-
-                        <div class="flex flex-wrap w-full gap-2 justify-center">
-                            <button
-                                class="w-auto  lg:w-1/4 lg:m-0 xl:w-1/5  h-10 border-2 rounded-full border-utama hover:bg-utama nyala "
-                                id="NewBtn" onclick="setActiveButton(this)">
-                                <p class="text-center mx-7 hover:text-white ">Karya Terbaru</p>
-                            </button>
-                            <button
-                                class="w-auto lg:w-1/4 lg:m-0 xl:w-1/5  h-10 border-2 rounded-full border-utama hover:bg-utama nyala "
-                                id="LogoBtn" onclick="setActiveButton(this)">
-                                <p class="text-center mx-7 hover:text-white ">Logo</p>
-                            </button>
-
-                            <button
-                                class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama nyala   "
-                                id="ApparelBtn" onclick="setActiveButton(this)">
-                                <p class="text-center mx-7 hover:text-white  ">Apparel</p>
-                            </button>
-                            <button
-                                class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama nyala   "
-                                onclick="setActiveButton(this)" id="PosterBtn">
-                                <p class="text-center mx-7 hover:text-white ">Poster</p>
-                            </button>
-                            <button
-                                class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama nyala   "
-                                onclick="setActiveButton(this)" id="PackagingBtn">
-                                <p class="text-center mx-7 hover:text-white ">Packaging</p>
-                            </button>
-                            <button
-                                class="w-auto  lg:w-1/5 lg:m-0  h-10 border-2 rounded-full border-utama hover:bg-utama nyala"
-                                onclick="setActiveButton(this)" id="VectorBtn">
-                                <p class="text-center mx-7 hover:text-white ">Vector</p>
-                            </button>
-
-
-                        </div>
-            </div>
-
+    <!-- Isi Gallery -->
+    <section class="w-full container ">
+        <div id="artworkGalleryVector" >
+            <!-- Karya akan ditambahkan di sini secara dinamis -->
+        </div>
+        <div id="artworkGalleryNew"></div>
+        <div id="artworkGalleryApparel">
+            <!-- Karya akan ditambahkan di sini secara dinamis -->
+        </div>
+        <div id="artworkGalleryLogo">
+            <!-- Karya akan ditambahkan di sini secara dinamis -->
+        </div>
+        <div id="artworkGalleryPackaging">
+            <!-- Karya akan ditambahkan di sini secara dinamis -->
+        </div>
+        <div id="artworkGalleryPoster">
+            <!-- Karya akan ditambahkan di sini secara dinamis -->
+        </div>
     </section>
-
-
-    <!-- Karya Section -->
-
-    <section id="Karya">
-
-
-
-        <!-- Modal untuk Berbagi -->
-        <div id="shareModal" class="modal hidden">
-            <div class="modal-content ">
-                <span class="close" id="closeModal">&times;</span>
-                <h2>Bagikan Karya Saya dong!</h2>
-                <div class="flex gap-3">
-                    <button onclick="shareToWhatsApp('https:portofolio-me-vert.vercel.app/gallery.html')"
-                        class="text-utama tbl text-xl lg:text-2xl  rounded items-center">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </button>
-                    <button onclick="shareToInstagram('https:portofolio-me-vert.vercel.app/gallery.html')"
-                        class="text-utama tbl text-xl lg:text-2xl  rounded items-center">
-                        <i class="fa-brands fa-instagram"></i>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        <!-- Modal Untuk Komentar -->
-        <div id="commentModal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close" onclick="closeCommentModal()">&times;</span>
-                <h2>Tinggalkan Jejakmu Kawan</h2>
-                <textarea id="commentInput" class="w-full p-2 border rounded"
-                    placeholder="Tulis komentar..."></textarea>
-                <button id="submitComment" class="bg-utama text-white py-2 px-4 rounded-lg mt-2">Kirim</button>
-            </div>
-        </div>
-        <!-- New Section -->
-        <section class="w-full" id="New">
-            <p class="text-center md:text-3xl text-xl font-bold">
-                Karya Terbaru
-            </p>
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-8/12 xl:mx-auto ">
-
-                <div class="mb-12 p-4 md:w-1/2" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Portofolio/Design Lomba 1.jpg" alt="" class="w-full">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Design Kemasan Perlombaan Bertema
-                        Nusantara</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item1')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                    <div id="comments1" class="mt-2"></div>
-                </div>
-
-                <div class="mb-12 p-4 md:w-1/2" data-aos="flip-right" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton ">
-                        <img src="Dist/Foto/Portofolio/Dedi Rialdi_Bandung_Karya1.jpg" alt="" class="w-full skeleton">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Batik Garuda Barong</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item2')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="mb-12 p-4 md:w-1/2" data-aos="flip-right" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Poster/Desain Sampul.jpg" alt="" class="w-full ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Cover Buku For My Honey In High
-                        School</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item3')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                </div>
-
-                <div class="mb-12 p-4 md:w-1/2" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Poster/Poster Hayu Olahraga 2.jpg" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Poster Lomba Gerakan Olahraga</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item4')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- Logo Section -->
-        <section class="w-full" id="Logo">
-            <p class="text-center md:text-3xl text-xl font-bold">
-                Logo
-            </p>
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-8/12 xl:mx-auto ">
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden">
-
-                        <img src="Dist/Foto/Gallery/Logo/AR TECHNO.jpg" alt="" class="w-full">
-                    </div>
-
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> AR-TECHNO</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item5')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-lg shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Gallery/Logo/ARGO-2.png" alt="" class="w-full ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> ARGO</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item6')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-                <!-- Itemid 7 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Logo/R-TECH.jpg" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">R-TECH</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item7')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-                <!-- Itemid 8 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Logo/Rahman Wedding.png" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Rahma Wedding</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item8')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Apparel Section -->
-        <section class="w-full" id="Apparel">
-            <p class="text-center md:text-3xl text-xl font-bold mb-2">
-                Apparel
-            </p>
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-8/12 xl:mx-auto ">
-                <!-- itemid9 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Gallery/Apparel/Cracy X Kosi.jpg" alt="" class="w-full">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Crazy X Kosi</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item9')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-                <!-- itemid10 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-lg shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Gallery/Apparel/Duck Bill X Rezz.jpg"" alt="" class=" w-full ">
-                        </div>
-                        <h3 class=" font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Duck Bill X Rezz</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item10')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                    </div>
-                <!-- item11 -->
-                    <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                        <div class="rounded-md shadow-md overflow-hidden skeleton">
-                            <img src="Dist/Foto/Gallery/Apparel/Duck rezz.jpg" alt="" class="w-full  ">
-                        </div>
-                        <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Duck Rezz</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item11')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- item12 -->
-                    <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                        <div class="rounded-md shadow-md overflow-hidden skeleton">
-                            <img src="Dist/Foto/Gallery/Apparel/Duckbill.jpg" alt="" class="w-full  ">
-                        </div>
-                        <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Duckbill</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item12')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- item13 -->
-                    <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                        <div class="rounded-md shadow-md overflow-hidden skeleton">
-                            <img src="Dist/Foto/Gallery/Apparel/Dyno.jpg" alt="" class="w-full  ">
-                        </div>
-                        <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Dyno</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item13')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- item14 -->
-                    <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                        <div class="rounded-md shadow-md overflow-hidden skeleton">
-                            <img src="Dist/Foto/Gallery/Apparel/Gheneosit.jpg" alt="" class="w-full  ">
-                        </div>
-                        <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Gheneosit</h3>
-                        <div class="flex justify-end gap-2">
-                            <button onclick="toggleLove(this, 'item14')"
-                                class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                                data-item-id="item1">
-                                <i class="fa-regular fa-heart mr-1"></i>
-                                <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                            </button>
-                            <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                            <button onclick="openCommentModal(1)"
-                                class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                                <i class="fa-regular fa-comment"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <!-- Poster Section -->
-        <section class="w-full" id="Poster">
-            <p class="text-center md:text-3xl text-xl font-bold mb-2">
-                Poster
-            </p>
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-8/12 xl:mx-auto ">
-                <!-- item15 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden">
-
-                        <img src="Dist/Foto/Gallery/Poster/Desain Sampul -2.jpg" alt="" class="w-full">
-                    </div>
-
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Falling Into The Heaven With You
-                    </h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item15')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-
-                </div>
-                <!-- item16 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-lg shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Gallery/Poster/Desain Sampul-3.jpg" alt="" class="w-full ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Magic Is Spirit</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item16')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-                <!-- item17 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Poster/Desain Sampul-5.jpg" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Grow With Concept</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item17')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-
-                </div>
-                <!-- item18 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Poster/Poster Hayu Olahraga 2.jpg" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">Hayu Olahraga!</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item18')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-
-                </div>
-                <!-- item19 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                    <div class="rounded-md shadow-md overflow-hidden skeleton">
-                        <img src="Dist/Foto/Gallery/Poster/Desain Sampul.jpg" alt="" class="w-full  ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton">For My Honey in High School</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item19')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Packaging Section -->
-        <section class="w-full" id="Packaging">
-            <p class="text-center md:text-3xl text-xl font-bold mb-2">
-                Packaging
-            </p>
-            <!-- item20 -->
-            <div class="mb-8 p-4 md:w-1/3" data-aos="flip-left" data-aos-duration="500">
-                <div class="rounded-md shadow-md overflow-hidden">
-
-                    <img src="Dist/Foto/Gallery/Packaging/Design Lomba 1.jpg" class="w-full">
-                </div>
-
-                <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Permen Susu Khas Sumbawa</h3>
-                <div class="flex justify-end gap-2">
-                    <button onclick="toggleLove(this, 'item20')"
-                        class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                        data-item-id="item1">
-                        <i class="fa-regular fa-heart mr-1"></i>
-                        <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                    </button>
-                    <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                        <i class="fa-solid fa-share"></i>
-                    </button>
-                    <button onclick="openCommentModal(1)"
-                        class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                        <i class="fa-regular fa-comment"></i>
-                    </button>
-                </div>
-            </div>
-
-
-        </section>
-
-        <!-- Vector Section -->
-        <section class="w-full" id="Vector">
-            <p class="text-center md:text-3xl text-xl font-bold mb-2">
-                Vector
-            </p>
-            <div class="w-full px-4 flex flex-wrap justify-center xl:w-8/12 xl:mx-auto ">
-                <!-- item21 -->
-                <div class="mb-8 p-4 md:w-1/3" data-aos="flip-right" data-aos-duration="500">
-                    <div class="rounded-lg shadow-md overflow-hidden">
-                        <img src="Dist/Foto/Gallery/Vector/Vektor Gaming.jpg" alt="" class="w-full ">
-                    </div>
-                    <h3 class="font-semibold text-gelap text-xl mt-5 mb-3 skeleton"> Perempuan</h3>
-                    <div class="flex justify-end gap-2">
-                        <button onclick="toggleLove(this, 'item21')"
-                            class="love-button text-utama text-2xl py-2 px-4 rounded flex items-center"
-                            data-item-id="item1">
-                            <i class="fa-regular fa-heart mr-1"></i>
-                            <span class="love-count text-l">0</span> <!-- Menampilkan jumlah suka -->
-                        </button>
-                        <button id="shareButton" class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-solid fa-share"></i>
-                        </button>
-                        <button onclick="openCommentModal(1)"
-                            class="text-utama text-2xl py-2 px-4 rounded flex items-center">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- Hiasan Doang -->
-        <div class="shapes-box">
-            <span data-parallax='{"x": 90, "y": 80, "rotateZ":500}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-1.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 50, "y": 50, "rotateZ":500}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-2.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 80, "y": 80, "rotateY":2000}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-3.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 20, "y": 80}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-4.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 10, "y": 70}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-5.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 50, "y": 80, "rotateZ":1500}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-6.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 80, "y": 10, "rotateZ":2000}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-7.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 60, "y": 100}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-9.png" title="" alt="">
-            </span>
-            <span data-parallax='{"x": 30, "y": 150, "rotateZ":1500}'>
-                <img src="/Dist/Foto/Shapes-content/fl-shape-10.png" title="" alt="">
-            </span>
-        </div>
-
-    </section>
-    <!-- contact start -->
+   
+    <!-- contact -->
     <section id="contact" class="pt-36 w-full pb-32">
         <div class="container">
             <div class="w-full px-4">
-                <div class="max-w-full mx-auto text-center mb-16" data-aos="fade-down" data-aos-duration="500">
+                <div class="max-w-full mx-auto text-center mb-16"data-aos="fade-down"
+                data-aos-duration="500">
                     <h4 class="font-semibold text-lg text-utama mb-2">Contact</h4>
                     <h2 class="font-bold text-gelap text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Saya</h2>
                     <p class="font-medium text-md text-gelap">Ayo hubungi saya melalui email anda...</p>
@@ -740,23 +173,27 @@
             <form id="contact-form" action="https://formspree.io/f/xblrdjza" method="POST">
                 <div class="w-full lg:w-2/3 lg:mx-auto">
 
-                    <div class="w-full px-4 mb-8" data-aos="fade-right" data-aos-duration="1500">
+                    <div class="w-full px-4 mb-8"data-aos="fade-right"
+                    data-aos-duration="1500">
                         <label for="name" class="text-base font-bold text-utama md:text-2xl">Nama</label>
                         <input type="text" id="name" name="Nama"
                             class="w-full bg-slate-200 text-gelap p-3 rounded-md focus:outline-none focus:ring-utama focus:ring-1 focus:border-utama">
                     </div>
-                    <div class="w-full px-4 mb-8" data-aos="fade-right" data-aos-duration="1500">
+                    <div class="w-full px-4 mb-8" data-aos="fade-right"
+                    data-aos-duration="1500">
                         <label for="email" class="text-base font-bold text-utama md:text-2xl">Email</label>
                         <input type="email" id="email" name="email"
-                            class="w-full bg-slate-200 text-gelap p-3 rounded-md focus:outline-none focus:ring-utama focus:ring-1 focus:border-utama">
+                        class="w-full bg-slate-200 text-gelap p-3 rounded-md focus:outline-none focus:ring-utama focus:ring-1 focus:border-utama">
                     </div>
-
-                    <div class="w-full px-4 mb-8" data-aos="fade-right" data-aos-duration="1500">
+                    
+                    <div class="w-full px-4 mb-8" data-aos="fade-right"
+                    data-aos-duration="1500">
                         <label for="massage" class="text-base font-bold text-utama md:text-2xl">Pesan</label>
                         <textarea type="text" id="massage" name="massage"
                             class="w-full bg-slate-200 text-gelap p-3 rounded-md focus:outline-none focus:ring-utama focus:ring-1 focus:border-utama h-32"></textarea>
                     </div>
-                    <div class="w-full px-4" data-aos="fade-up" data-aos-duration="500">
+                    <div class="w-full px-4"data-aos="fade-up"
+                    data-aos-duration="500">
                         <button type="submit"
                             class="text-base font-semibold bg-utama py-3 px-8 text-white rounded-full w-full bg-opacity-80 hover:bg-white hover:text-utama hover:shadow-lg transition duration-500 md:text-2xl">Kirim</button>
                     </div>
@@ -764,9 +201,8 @@
             </form>
         </div>
     </section>
-    <!-- contact end -->
-
-    <!-- footer start -->
+    <!-- contact -->
+         <!-- footer start -->
     <footer class="bg-gelap pt-24 pb-12 w-full">
         <div class="container">
             <div class="flex flex-wrap">
@@ -781,22 +217,20 @@
                     <h3 class="font-semibold text-xl text-white mb-5">Karya Terbaru</h3>
                     <ul>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#portofolio"
+                            <a href="#portofolio"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Kemasan Permen Khas
                                 Sambawa</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#portofolio"
-                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">Batik Garuda
-                                Barong</a>
+                            <a href="#portofolio"
+                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">Batik Garuda Barong</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#portofolio"
-                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">For My Honey in High
-                                School</a>
+                            <a href="#portofolio"
+                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">For My Honey in High School</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#portofolio"
+                            <a href="#portofolio"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Gerakan Olahraga</a>
                         </li>
                     </ul>
@@ -805,35 +239,34 @@
                     <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
                     <ul>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#home"
+                            <a href="#home"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Beranda</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#about"
-                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">Tentang
+                            <a href="#about" class="inline-block text-base text-slate-300 hover:text-utama mb-3">Tentang
                                 Saya</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#portofolio"
+                            <a href="#portofolio"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Portofolio</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#experience"
+                            <a href="#experience"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Experience</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#skills"
-                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">Skill</a>
+                            <a href="artworkGalleryVector"
+                                class="inline-block text-base text-slate-300 hover:text-utama mb-3">Vector</a>
                         </li>
                         <li>
-                            <a href="https://portofolio-me-vert.vercel.app/#contact"
+                            <a href="#contact"
                                 class="inline-block text-base text-slate-300 hover:text-utama mb-3">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="w-full pt-10 border-t border-slate-700" data-aos="fade-up" data-aos-duration="500">
-                <div class="flex items-center justify-center mb-10">
+                <div class="flex items-center justify-center mb-10" >
                     <!-- IG -->
                     <a href="https://www.instagram.com/gewoonrevaa_" target="_blank"
                         class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-text-gray-300 text-gray-300 hover:border-utama trasition duration-300 ease-in-out hover:bg-utama hover:text-white ">
@@ -845,7 +278,7 @@
                         </svg>
                         <!-- FB -->
                     </a>
-
+                    
                     <!-- WA -->
                     <a href="https://wa.me/6288971267465" target="_blank"
                         class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-text-gray-300 text-gray-300 hover:border-utama trasition duration-300 ease-in-out hover:bg-utama hover:text-white ">
@@ -867,9 +300,8 @@
                         </svg>
                     </a>
                 </div>
-                <div class="font-medium text-xs text-slate-700 text-center">Dibuat Oleh <a
-                        href="https://www.instagram.com/gewoonreva_" target="_blank" class="font-bold text-utama">Dedi
-                        Rialdi As Aldi</a>, Thank U For Browsing Around n Adious🖐
+                <div class="font-medium text-xs text-slate-700 text-center">Dibuat Oleh <a href="https://www.instagram.com/gewoonreva_" target="_blank"
+                        class="font-bold text-utama">Dedi Rialdi As Aldi</a>, Thank U For Browsing Around n Adious🖐
                 </div>
                 <div class="font-medium text-sm text-slate-700 text-center">Bandung @2024 </div>
             </div>
@@ -877,12 +309,8 @@
     </footer>
     <!-- footer finish -->
 
-    <!-- jQuery -->
-    <script src="Dist/js/jquery-3.2.1.min.js"></script>
-    <script src="Dist/js/jquery.parallax-scroll.js"></script>
-    <script src="/Dist/particles.js-master/particles.min.js"></script>
-    <script src="/Dist/particles.js-master/app.js"></script>
-    <script src="/Dist/js/script.js"></script>
+
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -893,6 +321,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     <script src="/Dist/js/slider.js"></script>
+    <script src="/Dist/js/script.js"></script>
 </body>
 
 </html>
